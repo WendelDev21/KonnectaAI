@@ -11,22 +11,23 @@ export const metadata: Metadata = {
   title: "KonnectaAI - Automação e Integração de Software",
   description:
     "Conecte, integre e desenvolva soluções de software que transformam seu negócio. Automação inteligente e integração de sistemas para empresas modernas.",
+  generator: "v0.app",
   icons: {
     icon: [
       {
-        url: "/KonnectaAI_logo.png",
+        url: "/icon-light-32x32.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/KonnectaAI_logo.png",
+        url: "/icon-dark-32x32.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/KonnectaAI_logo.png",
-        type: "image/png",
+        url: "/icon.svg",
+        type: "image/svg+xml",
       },
     ],
-    apple: "/KonnectaAI_logo.png",
+    apple: "/apple-icon.png",
   },
 }
 

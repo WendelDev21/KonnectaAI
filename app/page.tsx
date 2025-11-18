@@ -2,25 +2,16 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import {
-  ArrowRight,
-  Zap,
-  Link2,
-  Code2,
-  CheckCircle2,
-  Instagram,
-  MessageCircle,
-  Mail,
-  Phone,
-  Linkedin,
-} from "lucide-react"
+import { ArrowRight, Zap, Link2, Code2, CheckCircle2, Instagram, MessageCircle, Mail, Phone, Linkedin } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { FormModal } from "@/components/form-modal"
 import { CarouselModal } from "@/components/carousel-modal"
+import { BudgetModal } from "@/components/budget-modal"
 
 export default function Home() {
   const [isFormOpen, setIsFormOpen] = useState(false)
   const [isCarouselOpen, setIsCarouselOpen] = useState(false)
+  const [isBudgetOpen, setIsBudgetOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
@@ -29,7 +20,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between gap-4">
           <div className="flex items-center gap-2 sm:gap-3 min-w-0">
             <Image
-              src="KonnectaAI.png"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/KonnectaAI_logo-pNDu4BKOstrokS8DnLJ5qO1YbW84SM.png"
               alt="KonnectaAI Logo"
               width={40}
               height={40}
@@ -40,10 +31,10 @@ export default function Home() {
             </span>
           </div>
           <Button
-            onClick={() => setIsFormOpen(true)}
+            onClick={() => setIsBudgetOpen(true)}
             className="bg-[#006B89] hover:bg-[#001F3F] text-white text-sm sm:text-base px-4 sm:px-6 py-2 h-auto flex-shrink-0"
           >
-            Começar
+            Solicitar orçamento
           </Button>
         </div>
       </nav>
@@ -67,10 +58,10 @@ export default function Home() {
               </div>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
                 <Button
-                  onClick={() => setIsFormOpen(true)}
+                  onClick={() => setIsBudgetOpen(true)}
                   className="bg-[#006B89] hover:bg-[#001F3F] text-white text-base px-6 sm:px-8 py-3 sm:py-6 h-auto w-full sm:w-auto"
                 >
-                  Agendar demo <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+                  Solicitar orçamento <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
                 </Button>
                 <Button
                   onClick={() => setIsCarouselOpen(true)}
@@ -88,7 +79,7 @@ export default function Home() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-[#1ECCC4]/20 via-[#C8E6C9]/20 to-[#006B89]/20 rounded-2xl blur-2xl"></div>
               <Image
-                src="KonnectaAI.png"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/KonnectaAI-7LE5LUEsG6ocNwQiv6pkeE9upYRu2Q.png"
                 alt="KonnectaAI"
                 width={400}
                 height={400}
@@ -201,7 +192,7 @@ export default function Home() {
             Deixe-nos ajudá-lo a conectar, integrar e desenvolver soluções que impulsionam o crescimento.
           </p>
           <Button
-            onClick={() => setIsFormOpen(true)}
+            onClick={() => setIsBudgetOpen(true)}
             className="bg-[#006B89] hover:bg-[#001F3F] text-white text-base px-6 sm:px-8 py-3 sm:py-6 h-auto w-full sm:w-auto"
           >
             Começar agora <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
@@ -216,7 +207,7 @@ export default function Home() {
             {/* Logo and brand */}
             <div className="flex items-center gap-2 sm:gap-3">
               <Image
-                src="KonnectaAI_logo.png"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/KonnectaAI_logo-pNDu4BKOstrokS8DnLJ5qO1YbW84SM.png"
                 alt="KonnectaAI Logo"
                 width={32}
                 height={32}
@@ -280,6 +271,7 @@ export default function Home() {
 
       <FormModal isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
       <CarouselModal isOpen={isCarouselOpen} onClose={() => setIsCarouselOpen(false)} />
+      <BudgetModal isOpen={isBudgetOpen} onClose={() => setIsBudgetOpen(false)} />
     </div>
   )
 }
