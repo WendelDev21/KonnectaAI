@@ -1,16 +1,37 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+import {
+  Inter,
+  Inter as V0_Font_Inter,
+  Geist_Mono as V0_Font_Geist_Mono,
+  Source_Serif_4 as V0_Font_Source_Serif_4,
+} from "next/font/google"
+import CookieConsent from "@/components/cookie-consent"
+
+// Initialize fonts
+const _inter = V0_Font_Inter({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+})
+const _geistMono = V0_Font_Geist_Mono({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+})
+const _sourceSerif_4 = V0_Font_Source_Serif_4({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+})
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "KonnectaAI - Automação e Integração de Software",
+  title: "KonnectaAI - Automação Inteligente e Soluções de Software",
   description:
-    "Conecte, integre e desenvolva soluções de software que transformam seu negócio. Automação inteligente e integração de sistemas para empresas modernas.",
+    "Transforme sua empresa com soluções de automação, integração de sistemas e desenvolvimento de software sob medida.",
   generator: "v0.app",
   icons: {
     icon: [
@@ -37,9 +58,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR">
-      <body className={`font-sans antialiased`}>
+    <html lang="en">
+      <body className={`${inter.className} font-sans antialiased`}>
         {children}
+        <CookieConsent />
         <Analytics />
       </body>
     </html>
