@@ -1,41 +1,43 @@
-
+# ---------------------------
+# BASE IMAGE
+# ---------------------------
 FROM node:20-alpine AS base
-
-# Install pnpm
 RUN npm install -g pnpm
+WORKDIR /app
 
-# Dependencies stage
+# ---------------------------
+# INSTALL DEPENDENCIES (com cache)
+# ---------------------------
 FROM base AS deps
-WORKDIR /app
-COPY package.json pnpm-lock.yaml* ./
-RUN pnpm install --frozen-lockfile || pnpm install || npm install --legacy-peer-deps
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --no-frozen-lockfile
 
-# Builder stage
+# ---------------------------
+# BUILD
+# ---------------------------
 FROM base AS builder
-WORKDIR /app
-COPY package.json pnpm-lock.yaml* ./
-RUN pnpm install --frozen-lockfile || pnpm install || npm install --legacy-peer-deps
 COPY . .
+COPY --from=deps /app/node_modules ./node_modules
 RUN pnpm build
 
-# Runner stage
-FROM base AS runner
+# ---------------------------
+# RUNNER
+# ---------------------------
+FROM node:20-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
+# Cria usuário sem root
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
+# Copia arquivos standalone do Next
 COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
-
 EXPOSE 3000
-
-ENV PORT=3000
-
 CMD ["node", "server.js"]
