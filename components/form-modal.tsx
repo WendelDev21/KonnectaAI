@@ -27,11 +27,22 @@ export function FormModal({ isOpen, onClose }: FormModalProps) {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     console.log("[v0] Form submitted:", formData)
-    // Aqui você pode enviar os dados para seu backend ou serviço de email
-    alert("Obrigado pelo interesse! Entraremos em contato em breve.")
+    // Enviar dados para o webhook
+    const response = await fetch('https://n8n.konnectaai.com.br/webhook/site-form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+    if (response.ok) {
+      alert("Obrigado pelo interesse! Entraremos em contato em breve.")
+    } else {
+      alert("Ocorreu um erro ao enviar o formulário. Tente novamente mais tarde.")
+    }
     setFormData({ name: "", company: "", email: "", whatsapp: "" })
     onClose()
   }

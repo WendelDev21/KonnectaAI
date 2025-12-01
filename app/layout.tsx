@@ -32,23 +32,22 @@ export const metadata: Metadata = {
   title: "KonnectaAI - Automação Inteligente e Soluções de Software",
   description:
     "Transforme sua empresa com soluções de automação, integração de sistemas e desenvolvimento de software sob medida.",
-  generator: "v0.app",
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "/images/konnectaai-logo.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "/images/konnectaai-logo-dark.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
+        url: "/images/KonnectaAI_logo.svg",
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/images/konnectaai-logo-dark.png",
   },
 }
 
