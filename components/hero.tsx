@@ -41,21 +41,6 @@ export function Hero() {
               </ContactModal>
             </div>
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="h-8 w-8 rounded-full border-2 border-background bg-muted overflow-hidden relative"
-                  >
-                    <Image
-                      src={`/placeholder.svg?height=32&width=32&query=portrait`}
-                      alt="User"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
               <p>Confiança de +50 empresas</p>
             </div>
           </motion.div>

@@ -37,14 +37,6 @@ export function DevelopmentHero() {
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </ContactModal>
-            <Button
-              variant="outline"
-              size="lg"
-              className="gap-2 bg-transparent"
-              onClick={() => window.open("https://konnecta.ai")}
-            >
-              Conhecer a plataforma
-            </Button>
           </div>
 
           {/* Features grid */}

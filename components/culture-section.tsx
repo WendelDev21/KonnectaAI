@@ -1,3 +1,6 @@
+import Image from "next/image"
+
+
 export function CultureSection() {
   return (
     <section className="py-20 bg-background">
@@ -29,7 +32,14 @@ export function CultureSection() {
             </ul>
           </div>
           <div className="bg-gradient-to-br from-ring/10 to-accent rounded-lg h-96 flex items-center justify-center text-muted-foreground">
-            <p className="text-center">Imagem da Equipe</p>
+            
+            <Image
+              src="/KonnectaAI_logo.png"
+              alt="Equipe KonnectaAI"
+              width={500}
+              height={384}
+              className="rounded-lg object-cover"
+            />
           </div>
         </div>
       </div>

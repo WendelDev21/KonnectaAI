@@ -193,9 +193,6 @@ export function AutomationsTemplates() {
                           </Badge>
                         </div>
                         <p className="text-muted-foreground mb-3">{template.description}</p>
-                        <div className="flex items-center gap-2 text-sm font-medium text-primary">
-                          <span>⏱️ Implementação: {template.timeToImplement}</span>
-                        </div>
                       </div>
                     </div>
                     <ChevronDown

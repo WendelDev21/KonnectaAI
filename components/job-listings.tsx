@@ -8,73 +8,13 @@ const jobs = [
   {
     id: 1,
     title: "Desenvolvedor Full Stack",
-    department: "Engenharia",
-    level: "Sênior",
-    location: "São Paulo, SP",
-    type: "Presencial",
-    description:
-      "Procuramos um desenvolvedor full stack com experiência em React, Node.js e arquitetura de sistemas. Você será responsável por liderar projetos de automação e integração.",
-    requirements: ["5+ anos de experiência", "React ou Vue.js", "Node.js e Express", "Experiência com APIs REST"],
-  },
-  {
-    id: 2,
-    title: "Product Manager",
-    department: "Produto",
-    level: "Pleno",
-    location: "São Paulo, SP",
-    type: "Híbrido",
-    description:
-      "Buscamos um PM estratégico que possa definir a visão de nossos produtos e trabalhar com design, engenharia e vendas. Experiência com SaaS é essencial.",
-    requirements: [
-      "3+ anos como PM",
-      "Experiência com SaaS",
-      "Conhecimento de automação/integração",
-      "Analytics e data-driven",
-    ],
-  },
-  {
-    id: 3,
-    title: "Designer UX/UI",
-    department: "Design",
-    level: "Pleno",
-    location: "Remoto",
+    department: "Automações",
+    level: "Júnior",
+    location: "Aracaju, SE",
     type: "Remoto",
     description:
-      "Designer criativo e focado em UX procurando transformar conceitos em interfaces intuitivas e bonitas. Você trabalhará com um time multidisciplinar.",
-    requirements: ["3+ anos de experiência", "Figma ou similar", "Design System", "Prototipagem interativa"],
-  },
-  {
-    id: 4,
-    title: "Especialista em DevOps",
-    department: "Infraestrutura",
-    level: "Sênior",
-    location: "São Paulo, SP",
-    type: "Híbrido",
-    description:
-      "Procuramos um DevOps experiente para gerenciar nossa infraestrutura cloud, CI/CD e garantir alta disponibilidade dos nossos serviços.",
-    requirements: ["5+ anos com DevOps", "AWS ou GCP", "Kubernetes e Docker", "IaC (Terraform/CloudFormation)"],
-  },
-  {
-    id: 5,
-    title: "Especialista em Vendas B2B",
-    department: "Vendas",
-    level: "Sênior",
-    location: "São Paulo, SP",
-    type: "Presencial",
-    description:
-      "Procuramos um vendedor experiente em soluções B2B com histórico comprovado de fechamentos. Você trabalhará com enterprise e mid-market.",
-    requirements: ["5+ anos em vendas B2B", "Experiência em SaaS", "Network consolidado", "Conhecimento de automação"],
-  },
-  {
-    id: 6,
-    title: "Analista de Dados",
-    department: "Analytics",
-    level: "Pleno",
-    location: "Remoto",
-    type: "Remoto",
-    description:
-      "Venha trabalhar com dados! Procuramos um analista para extrair insights e drive growth através de análise de dados e BI.",
-    requirements: ["3+ anos como Analista", "SQL e Python", "BI Tools (Tableau/Power BI)", "Storytelling com dados"],
+      "Procuramos um desenvolvedor full stack com experiência em n8n e automação. Você será responsável por liderar projetos de automação e integração.",
+    requirements: ["1+ anos de experiência", "n8n, Make, Zapier ou outros", "Html, Css e Javascript","Experiência com APIs REST"],
   },
 ]
 

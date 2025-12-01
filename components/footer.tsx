@@ -39,12 +39,12 @@ export function Footer() {
             <h3 className="font-bold mb-4">Empresa</h3>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
               <li>
-                <Link href="#sobre" className="hover:text-white transition-colors">
+                <Link href="http://localhost:3000/#about" className="hover:text-white transition-colors">
                   Sobre Nós
                 </Link>
               </li>
               <li>
-                <Link href="#carreiras" className="hover:text-white transition-colors">
+                <Link href="./carreiras" className="hover:text-white transition-colors">
                   Carreiras
                 </Link>
               </li>
@@ -62,7 +62,7 @@ export function Footer() {
               <Link href="#" className="hover:text-white transition-colors">
                 <Linkedin className="h-5 w-5" />
               </Link>
-              <Link href="#" className="hover:text-white transition-colors">
+              <Link href="https://www.instagram.com/konnecta.ai/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                 <Instagram className="h-5 w-5" />
               </Link>
               <Link href="#" className="hover:text-white transition-colors">
